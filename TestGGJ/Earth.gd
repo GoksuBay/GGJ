@@ -12,9 +12,9 @@ func get_input():
 		rotation_dir = 0
 		velocity = Vector2()
 		if Input.is_action_pressed('ui_right'):
-			rotation_dir += 1
-		if Input.is_action_pressed('ui_left'):
 			rotation_dir -= 1
+		if Input.is_action_pressed('ui_left'):
+			rotation_dir += 1
 		if (Input.is_action_just_pressed("ui_select") && get_parent().canPlant):
 			get_parent().plant()
 	pass

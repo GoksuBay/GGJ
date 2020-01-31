@@ -3,7 +3,6 @@
 [ext_resource path="res://Game Over.gd" type="Script" id=1]
 
 [node name="Game Over" type="Popup"]
-visible = true
 margin_left = 166.941
 margin_top = 42.3573
 margin_right = 489.941

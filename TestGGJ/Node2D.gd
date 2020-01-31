@@ -110,7 +110,6 @@ func plant():
 		plantedSeeds += 1
 	pass
 
-
 func timeout_plant():
 	canPlant = true
 	pass

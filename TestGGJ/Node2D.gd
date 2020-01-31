@@ -56,7 +56,7 @@ func _physics_process(delta):
 	time = s
 	if game_ending() != true:
 		during_game()
-	if temp_s*numofPeople/10 > 10000 :
+	if temp_s*numofPeople/10 > 10000 && game_ending() != true:
 		warm()
 		temp_s = 0
 	timer.start()
@@ -75,6 +75,7 @@ func _physics_process(delta):
 		get_node("Game Over").visible = true
 		var DamageLabel = get_node("Game Over").get_node("Panel/num")
 		DamageLabel.text = str("%" , 100* plantedSeeds/(s/10) )
+		get_node("Earth").rotation_speed = 0
 		pass
 
 func game_ending():

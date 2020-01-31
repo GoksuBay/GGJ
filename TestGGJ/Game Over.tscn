@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Game Over.gd" type="Script" id=1]
+
+[node name="Game Over" type="Popup"]
+margin_left = 166.941
+margin_top = 42.3573
+margin_right = 489.941
+margin_bottom = 277.357
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 321.0
+margin_bottom = 236.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gover" type="RichTextLabel" parent="Panel"]
+margin_right = 323.0
+margin_bottom = 59.0
+text = "GAME OVER"
+
+[node name="damage" type="RichTextLabel" parent="Panel"]
+margin_left = 2.0
+margin_top = 81.0
+margin_right = 174.0
+margin_bottom = 121.0
+text = "Azaltııilan Hasar Yüzdesi:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="num" type="RichTextLabel" parent="Panel"]
+margin_left = 162.494
+margin_top = 66.5451
+margin_right = 202.494
+margin_bottom = 106.545
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Restart" type="Button" parent="Panel"]
+margin_left = 113.032
+margin_top = 168.284
+margin_right = 185.032
+margin_bottom = 209.284
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Panel/Restart" to="." method="_on_Restart_pressed"]

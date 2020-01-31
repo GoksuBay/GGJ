@@ -1,26 +1,80 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://testanim/tree_short1.png" type="Texture" id=1]
+[ext_resource path="res://dunya_cokbuyuk.png" type="Texture" id=1]
 [ext_resource path="res://Earth.gd" type="Script" id=2]
 [ext_resource path="res://Node2D.gd" type="Script" id=3]
+[ext_resource path="res://testanim/2.png" type="Texture" id=4]
+[ext_resource path="res://testanim/3.png" type="Texture" id=5]
+[ext_resource path="res://testanim/5.png" type="Texture" id=6]
+[ext_resource path="res://testanim/4.png" type="Texture" id=7]
+[ext_resource path="res://testanim/1.png" type="Texture" id=8]
+[ext_resource path="res://testanim/6.png" type="Texture" id=9]
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=10]
+[ext_resource path="res://RichTextLabel.gd" type="Script" id=11]
+[ext_resource path="res://Game Over.tscn" type="PackedScene" id=12]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 207.631, 198.263 )
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "kosma",
+"speed": 30.0
+} ]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2( 13.5661, 1.50734 )
 script = ExtResource( 3 )
 
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 97.3199, 219.051 )
+script = ExtResource( 10 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+position = Vector2( 599.854, 268.984 )
+scale = Vector2( 0.554361, 0.554361 )
+frames = SubResource( 1 )
+animation = "kosma"
+
 [node name="Earth" type="KinematicBody2D" parent="."]
-position = Vector2( 476.316, 259.211 )
+position = Vector2( 713.617, 2554.36 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Earth"]
-position = Vector2( -383.155, -263.165 )
-scale = Vector2( 0.450743, 0.28009 )
 texture = ExtResource( 1 )
-centered = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Earth"]
-visible = false
-position = Vector2( 0, -3.05176e-05 )
-shape = SubResource( 1 )
+[node name="Game Over" parent="." instance=ExtResource( 12 )]
+margin_right = 440.0
+margin_bottom = 233.0
+
+[node name="Trees" type="RichTextLabel" parent="."]
+margin_right = 61.0
+margin_bottom = 57.0
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Seeds" type="RichTextLabel" parent="."]
+margin_left = 4.01987
+margin_top = 35.0609
+margin_right = 65.0199
+margin_bottom = 92.0609
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Temperature" type="RichTextLabel" parent="."]
+margin_left = 98.4211
+margin_top = -2.08057
+margin_right = 159.421
+margin_bottom = 54.9194
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

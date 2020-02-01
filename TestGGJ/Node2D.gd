@@ -146,6 +146,12 @@ func collect():
 	pass
 
 func visibility():
-	if numofTrees < 9900:
+	if numofTrees < 9000:
 		get_node("Earth/tree2").visible = false
-	
+	if numofTrees < 8500:
+		get_node("Earth/tree13").visible = false
+	if numofTrees < 7500:
+		get_node("Earth/tree16").visible = false
+	if numofTrees < 7000:
+		get_node("Earth/tree").visible = false
+

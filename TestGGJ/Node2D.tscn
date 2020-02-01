@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://dunya_finalest_final_v2.png" type="Texture" id=1]
 [ext_resource path="res://Earth.gd" type="Script" id=2]
@@ -20,6 +20,8 @@
 [ext_resource path="res://charanim/r2.png" type="Texture" id=18]
 [ext_resource path="res://agac/agac_long1.png" type="Texture" id=19]
 [ext_resource path="res://agac/agac_short1.png" type="Texture" id=20]
+[ext_resource path="res://agac/agac_elma.png" type="Texture" id=21]
+[ext_resource path="res://agac/agac_mid1.png" type="Texture" id=22]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -53,17 +55,59 @@ rotation = -1.0472
 scale = Vector2( 0.649263, 0.649263 )
 texture = ExtResource( 19 )
 
-[node name="tree3" type="Sprite" parent="Earth"]
-position = Vector2( -2291.1, -732.865 )
-rotation = -1.309
+[node name="tree12" type="Sprite" parent="Earth"]
+position = Vector2( -1874.69, 1407.92 )
+rotation = -2.35619
 scale = Vector2( 0.649263, 0.649263 )
 texture = ExtResource( 19 )
+
+[node name="tree20" type="Sprite" parent="Earth"]
+position = Vector2( 666.847, 2240.12 )
+rotation = -3.40339
+scale = Vector2( 0.649263, 0.649263 )
+texture = ExtResource( 19 )
+
+[node name="tree3" type="Sprite" parent="Earth"]
+position = Vector2( -2098.39, -732.928 )
+rotation = -1.0472
+scale = Vector2( 0.512865, 0.512865 )
+texture = ExtResource( 21 )
+
+[node name="tree13" type="Sprite" parent="Earth"]
+position = Vector2( -1610.5, 1566.08 )
+rotation = -2.35619
+scale = Vector2( 0.512865, 0.512865 )
+texture = ExtResource( 21 )
+
+[node name="tree19" type="Sprite" parent="Earth"]
+position = Vector2( -46.3135, 2195.88 )
+rotation = -3.14159
+scale = Vector2( 0.512865, 0.512865 )
+texture = ExtResource( 21 )
+
+[node name="tree10" type="Sprite" parent="Earth"]
+position = Vector2( -2078.67, 839.479 )
+rotation = -2.09439
+scale = Vector2( 0.512865, 0.512865 )
+texture = ExtResource( 21 )
 
 [node name="tree5" type="Sprite" parent="Earth"]
 position = Vector2( -2333.25, -335.474 )
 rotation = -1.57079
 scale = Vector2( 0.649263, 0.649263 )
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
+
+[node name="tree21" type="Sprite" parent="Earth"]
+position = Vector2( 371.897, 2319.39 )
+rotation = -3.14159
+scale = Vector2( 0.649263, 0.649263 )
+texture = ExtResource( 20 )
+
+[node name="tree16" type="Sprite" parent="Earth"]
+position = Vector2( -1062.14, 2108.42 )
+rotation = -2.61799
+scale = Vector2( 0.649263, 0.649263 )
+texture = ExtResource( 20 )
 
 [node name="tree2" type="Sprite" parent="Earth"]
 position = Vector2( -1717.69, -1393.16 )
@@ -78,10 +122,34 @@ scale = Vector2( 0.325738, 0.325738 )
 texture = ExtResource( 20 )
 
 [node name="tree6" type="Sprite" parent="Earth"]
-position = Vector2( -2199.37, -62.5012 )
+position = Vector2( -2199.37, -69.5239 )
 rotation = -1.57079
 scale = Vector2( 0.325738, 0.325738 )
-texture = ExtResource( 20 )
+texture = ExtResource( 22 )
+
+[node name="tree11" type="Sprite" parent="Earth"]
+position = Vector2( -1887.61, 1081.36 )
+rotation = -2.35619
+scale = Vector2( 0.325738, 0.325738 )
+texture = ExtResource( 22 )
+
+[node name="tree18" type="Sprite" parent="Earth"]
+position = Vector2( -357.709, 2107.95 )
+rotation = -2.87979
+scale = Vector2( 0.325738, 0.325738 )
+texture = ExtResource( 22 )
+
+[node name="tree14" type="Sprite" parent="Earth"]
+position = Vector2( -1296.4, 1775.23 )
+rotation = -2.61799
+scale = Vector2( 0.325738, 0.325738 )
+texture = ExtResource( 22 )
+
+[node name="tree17" type="Sprite" parent="Earth"]
+position = Vector2( -608.341, 2124.55 )
+rotation = -2.87979
+scale = Vector2( 0.325738, 0.325738 )
+texture = ExtResource( 22 )
 
 [node name="tree8" type="Sprite" parent="Earth"]
 position = Vector2( -2199.37, 292.743 )
@@ -92,6 +160,18 @@ texture = ExtResource( 20 )
 [node name="tree7" type="Sprite" parent="Earth"]
 position = Vector2( -2145.18, -568.272 )
 rotation = -1.309
+scale = Vector2( 0.325738, 0.325738 )
+texture = ExtResource( 20 )
+
+[node name="tree9" type="Sprite" parent="Earth"]
+position = Vector2( -2159.23, 562.381 )
+rotation = -1.83259
+scale = Vector2( 0.325738, 0.325738 )
+texture = ExtResource( 20 )
+
+[node name="tree15" type="Sprite" parent="Earth"]
+position = Vector2( -1161.27, 1891.39 )
+rotation = -2.61799
 scale = Vector2( 0.325738, 0.325738 )
 texture = ExtResource( 20 )
 

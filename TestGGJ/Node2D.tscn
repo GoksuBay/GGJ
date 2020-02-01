@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://dunya_finalest_final_v2.png" type="Texture" id=1]
 [ext_resource path="res://Earth.gd" type="Script" id=2]
@@ -36,6 +36,8 @@
 [ext_resource path="res://charanim/charidle1.png" type="Texture" id=34]
 [ext_resource path="res://charanim/charidle4.png" type="Texture" id=35]
 [ext_resource path="res://charanim/charidle2.png" type="Texture" id=36]
+[ext_resource path="res://agac/agaci_kokden.png" type="Texture" id=37]
+[ext_resource path="res://denizcopu.png" type="Texture" id=38]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -72,6 +74,126 @@ texture = ExtResource( 13 )
 [node name="Earth" type="KinematicBody2D" parent="."]
 position = Vector2( 646.447, 2554.36 )
 script = ExtResource( 2 )
+
+[node name="kok" type="Sprite" parent="Earth"]
+position = Vector2( -1595.75, -1310.19 )
+rotation = -0.931443
+scale = Vector2( 0.277147, 0.292104 )
+texture = ExtResource( 37 )
+
+[node name="kok2" type="Sprite" parent="Earth"]
+position = Vector2( -1752.61, -1071.65 )
+rotation = -1.0472
+scale = Vector2( 0.277147, 0.292104 )
+texture = ExtResource( 37 )
+
+[node name="kok3" type="Sprite" parent="Earth"]
+position = Vector2( -1864.51, -896.856 )
+rotation = -1.11959
+scale = Vector2( 0.277147, 0.292104 )
+texture = ExtResource( 37 )
+
+[node name="kok4" type="Sprite" parent="Earth"]
+position = Vector2( -1924.13, -734.86 )
+rotation = -1.19711
+scale = Vector2( 0.277147, 0.292104 )
+texture = ExtResource( 37 )
+
+[node name="kok5" type="Sprite" parent="Earth"]
+position = Vector2( -2006.64, -500.16 )
+rotation = -1.309
+scale = Vector2( 0.277147, 0.292104 )
+texture = ExtResource( 37 )
+
+[node name="kok6" type="Sprite" parent="Earth"]
+position = Vector2( -2042.7, -299.938 )
+rotation = -1.51202
+scale = Vector2( 0.347347, 0.366093 )
+texture = ExtResource( 37 )
+
+[node name="kok7" type="Sprite" parent="Earth"]
+position = Vector2( -2059.91, 28.8193 )
+rotation = -1.57079
+scale = Vector2( 0.347347, 0.366093 )
+texture = ExtResource( 37 )
+
+[node name="kok8" type="Sprite" parent="Earth"]
+position = Vector2( -2058.29, 272.776 )
+rotation = -1.6239
+scale = Vector2( 0.268673, 0.417473 )
+texture = ExtResource( 37 )
+
+[node name="kok9" type="Sprite" parent="Earth"]
+position = Vector2( -2020, 528.75 )
+rotation = -1.83259
+scale = Vector2( 0.268673, 0.417473 )
+texture = ExtResource( 37 )
+
+[node name="kok10" type="Sprite" parent="Earth"]
+position = Vector2( -1951.03, 742.908 )
+rotation = -1.83259
+scale = Vector2( 0.268673, 0.417473 )
+texture = ExtResource( 37 )
+
+[node name="kok11" type="Sprite" parent="Earth"]
+position = Vector2( -1803.15, 1026.17 )
+rotation = -2.12301
+scale = Vector2( 0.268673, 0.417473 )
+texture = ExtResource( 37 )
+
+[node name="kok12" type="Sprite" parent="Earth"]
+position = Vector2( -1699.17, 1210.45 )
+rotation = -2.35619
+scale = Vector2( 0.337613, 0.524593 )
+texture = ExtResource( 37 )
+
+[node name="kok13" type="Sprite" parent="Earth"]
+position = Vector2( -1493.24, 1415.48 )
+rotation = -2.39668
+scale = Vector2( 0.337613, 0.524593 )
+texture = ExtResource( 37 )
+
+[node name="kok14" type="Sprite" parent="Earth"]
+position = Vector2( -1254.36, 1651.95 )
+rotation = -2.61799
+scale = Vector2( 0.337613, 0.524593 )
+texture = ExtResource( 37 )
+
+[node name="kok15" type="Sprite" parent="Earth"]
+position = Vector2( -905.65, 1862.95 )
+rotation = -2.73815
+scale = Vector2( 0.337613, 0.524593 )
+texture = ExtResource( 37 )
+
+[node name="kok16" type="Sprite" parent="Earth"]
+position = Vector2( -615.624, 1983.19 )
+rotation = -2.90913
+scale = Vector2( 0.337613, 0.524593 )
+texture = ExtResource( 37 )
+
+[node name="kok17" type="Sprite" parent="Earth"]
+position = Vector2( -361.634, 2054.56 )
+rotation = -3.08682
+scale = Vector2( 0.337613, 0.524593 )
+texture = ExtResource( 37 )
+
+[node name="kok18" type="Sprite" parent="Earth"]
+position = Vector2( -69.0771, 2083.73 )
+rotation = -3.14159
+scale = Vector2( 0.337613, 0.524593 )
+texture = ExtResource( 37 )
+
+[node name="kok19" type="Sprite" parent="Earth"]
+position = Vector2( 303.518, 2061.11 )
+rotation = -3.30306
+scale = Vector2( 0.337613, 0.524593 )
+texture = ExtResource( 37 )
+
+[node name="kok20" type="Sprite" parent="Earth"]
+position = Vector2( 567.256, 2045.93 )
+rotation = -3.40339
+scale = Vector2( 0.376241, 0.782785 )
+texture = ExtResource( 37 )
 
 [node name="tree" type="Sprite" parent="Earth"]
 position = Vector2( -2050.26, -1232.62 )
@@ -201,6 +323,12 @@ texture = ExtResource( 20 )
 
 [node name="Sprite" type="Sprite" parent="Earth"]
 texture = ExtResource( 1 )
+
+[node name="cop" type="Sprite" parent="Earth"]
+position = Vector2( 969.704, -1787.54 )
+rotation = 0.596088
+scale = Vector2( 0.1863, 0.1863 )
+texture = ExtResource( 38 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 position = Vector2( 97.3199, 219.051 )

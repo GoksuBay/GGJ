@@ -29,7 +29,7 @@ margin_left = 2.0
 margin_top = 81.0
 margin_right = 174.0
 margin_bottom = 121.0
-text = "Azaltııilan Hasar Yüzdesi:"
+text = "Puan:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -39,6 +39,15 @@ margin_left = 162.494
 margin_top = 66.5451
 margin_right = 202.494
 margin_bottom = 106.545
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sure" type="RichTextLabel" parent="Panel"]
+margin_left = 170.0
+margin_top = 7.0
+margin_right = 315.0
+margin_bottom = 106.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

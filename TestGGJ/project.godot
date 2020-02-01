@@ -15,9 +15,9 @@ _global_script_class_icons={
 
 [application]
 
-config/name="GGJTest"
+config/name="Can you repair ?"
 run/main_scene="res://Main menu.tscn"
-config/icon="res://icon.png"
+config/icon="res://testanim/IMG_0426 (1).PNG"
 
 [display]
 

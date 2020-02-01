@@ -255,7 +255,7 @@ func visibility():
 		get_node("Earth/cop16").visible = true
 	else:
 		get_node("Earth/cop16").visible = false
-	if numofPeople > 100 && numofPeople < 5000:
+	if numofPeople > 100 && numofPeople < 2000:
 		get_node("Earth/evre1").visible = true
 		get_node("Earth/evre2").visible = true
 		get_node("Earth/evre3").visible = true
@@ -266,13 +266,23 @@ func visibility():
 		get_node("Earth/evre3").visible = false
 		get_node("Earth/evre4").visible = false
 		get_node("Earth/evre4").visible = false
-	if numofPeople > 5000 && numofPeople < 10000:
+	if numofPeople > 2000 && numofPeople < 5000:
 		get_node("Earth/evre7").visible = true
 		get_node("Earth/evre8").visible = true
 	else:
 		get_node("Earth/evre7").visible = false
 		get_node("Earth/evre8").visible = false
-	
+	if numofPeople > 5000 && numofPeople < 8000:
+		get_node("Earth/evre9").visible = true
+		get_node("Earth/evre10").visible = true
+		get_node("Earth/evre11").visible = true
+		get_node("Earth/evre12").visible = true
+	else:
+		get_node("Earth/evre10").visible = false
+
+	if numofPeople > 8000 && numofPeople < 13000:
+		get_node("Earth/evre13").visible = true
+		get_node("Earth/evre14").visible = true
 
 func tempTimer():
 	temp_ms += 1

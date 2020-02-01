@@ -17,7 +17,7 @@ func _physics_process(delta):
 		if earthrot < -0.26 && earthrot > -2.78:
 			$AnimatedSprite.speed_scale = 1.0
 			$AnimatedSprite.position = Vector2(551.772 , 250)
-			if Input.is_action_pressed("ui_left") && Input.is_action_pressed("ui_right"):
+			if Input.is_action_pressed("ui_left") && Input.is_action_pressed("ui_right") && Input.is_action_pressed("ui_select"):
 				$AnimatedSprite.play("deftekne")
 			elif Input.is_action_pressed("ui_left"):
 				$AnimatedSprite.flip_h = true
@@ -55,6 +55,8 @@ func _physics_process(delta):
 					animation = false
 			elif Input.is_action_pressed("ui_left") && Input.is_action_pressed("ui_right"):
 				$AnimatedSprite.play("default")
+			elif (Input.is_action_pressed("ui_left") || Input.is_action_pressed("ui_right")) && Input.is_action_pressed("ui_select"):
+				$AnimatedSprite.play("default")
 			elif Input.is_action_pressed("ui_left"):
 				$AnimatedSprite.flip_h = true
 				$AnimatedSprite.play("kosma")
@@ -63,5 +65,8 @@ func _physics_process(delta):
 				$AnimatedSprite.play("kosma")
 			elif !animation:
 				$AnimatedSprite.play("default")
+	elif earthrot < -0.26 && earthrot > -2.78:
+		$AnimatedSprite.play("deftekne")
+	
 	else:
 		$AnimatedSprite.play("default")

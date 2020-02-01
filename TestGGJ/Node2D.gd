@@ -38,27 +38,27 @@ func _ready():
 
 func temp_event(numofPeople):
 	if yuzde < 90:
-		temperature = 32-(plantedSeeds/30)
+		temperature = 32-(plantedSeeds/30 - rubbish/5)
 		if temperature < 22:
 			temperature = 21
 	if yuzde < 80:
-		temperature = 43-(plantedSeeds/30)
+		temperature = 43-(plantedSeeds/30 - rubbish/5)
 		if temperature < 22:
 			temperature = 21
 	if yuzde < 50:
-		temperature = 52-(plantedSeeds/30)
+		temperature = 52-(plantedSeeds/30 - rubbish/5)
 		if temperature < 22:
 			temperature = 21
 	if yuzde < 30:
-		temperature = 63-(plantedSeeds/30)
+		temperature = 63-(plantedSeeds/30 - rubbish/5)
 		if temperature < 22:
 			temperature = 21
 	if yuzde < 20:
-		temperature = 68-(plantedSeeds/30)
+		temperature = 68-(plantedSeeds/30 - rubbish/5)
 		if temperature < 22:
 			temperature = 21
 	if yuzde < 10:
-		temperature = 80-(plantedSeeds/30)
+		temperature = 80-(plantedSeeds/30 - rubbish/5)
 		if temperature < 22:
 			temperature = 21
 		pass
@@ -66,7 +66,7 @@ func temp_event(numofPeople):
 		temperature = 63
 
 func _physics_process(delta):
-	print(get_node("Earth").rotation)
+	print()
 	time = s
 	if game_ending() != true:
 		timer()
@@ -128,8 +128,11 @@ func warm():
 	numofTrees -= 1
 	if numofTrees%10 == 0:
 		numofSeeds += 1
-	if numofPeople%10 == 0:
+	if temp_s%10 == 0:
 		rubbish += 1
+		rubbish += rubbish/2
+	if rubbish > 20:
+		rubbish = 20
 	pass
 
 func timer():
@@ -188,6 +191,88 @@ func visibility():
 		get_node("Earth/tree5").visible = false
 		get_node("Earth/tree14").visible = false
 		get_node("Earth/tree12").visible = false
+	if rubbish > 0:
+		get_node("Earth/cop").visible = true
+	else:
+		get_node("Earth/cop").visible = false
+	if rubbish > 1:
+		get_node("Earth/cop2").visible = true
+	else:
+		get_node("Earth/cop2").visible = false
+	if rubbish > 2:
+		get_node("Earth/cop3").visible = true
+	else:
+		get_node("Earth/cop3").visible = false
+	if rubbish > 3:
+		get_node("Earth/cop4").visible = true
+	else:
+		get_node("Earth/cop4").visible = false
+	if rubbish > 4:
+		get_node("Earth/cop5").visible = true
+	else:
+		get_node("Earth/cop5").visible = false
+	if rubbish > 5:
+		get_node("Earth/cop6").visible = true
+	else:
+		get_node("Earth/cop6").visible = false
+	if rubbish > 6:
+		get_node("Earth/cop7").visible = true
+	else:
+		get_node("Earth/cop7").visible = false
+	if rubbish > 7:
+		get_node("Earth/cop8").visible = true
+	else:
+		get_node("Earth/cop8").visible = false
+	if rubbish > 8:
+		get_node("Earth/cop9").visible = true
+	else:
+		get_node("Earth/cop9").visible = false
+	if rubbish > 9:
+		get_node("Earth/cop10").visible = true
+	else:
+		get_node("Earth/cop10").visible = false
+	if rubbish > 10:
+		get_node("Earth/cop11").visible = true
+	else:
+		get_node("Earth/cop11").visible = false
+	if rubbish > 11:
+		get_node("Earth/cop12").visible = true
+	else:
+		get_node("Earth/cop12").visible = false
+	if rubbish > 12:
+		get_node("Earth/cop13").visible = true
+	else:
+		get_node("Earth/cop13").visible = false
+	if rubbish > 13:
+		get_node("Earth/cop14").visible = true
+	else:
+		get_node("Earth/cop14").visible = false
+	if rubbish > 14:
+		get_node("Earth/cop15").visible = true
+	else:
+		get_node("Earth/cop15").visible = false
+	if rubbish > 15:
+		get_node("Earth/cop16").visible = true
+	else:
+		get_node("Earth/cop16").visible = false
+	if numofPeople > 100 && numofPeople < 5000:
+		get_node("Earth/evre1").visible = true
+		get_node("Earth/evre2").visible = true
+		get_node("Earth/evre3").visible = true
+		get_node("Earth/evre4").visible = true
+	else:
+		get_node("Earth/evre1").visible = false
+		get_node("Earth/evre2").visible = false
+		get_node("Earth/evre3").visible = false
+		get_node("Earth/evre4").visible = false
+		get_node("Earth/evre4").visible = false
+	if numofPeople > 5000 && numofPeople < 10000:
+		get_node("Earth/evre7").visible = true
+		get_node("Earth/evre8").visible = true
+	else:
+		get_node("Earth/evre7").visible = false
+		get_node("Earth/evre8").visible = false
+	
 
 func tempTimer():
 	temp_ms += 1

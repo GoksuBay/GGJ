@@ -22,9 +22,8 @@ func get_input():
 			rotation_dir -= 1
 		if Input.is_action_pressed('ui_left'):
 			rotation_dir += 1
-		if Input.is_action_just_pressed("ui_select") && (rotation > 0.75 || rotation < -2.80) && get_parent().temp_s %2 == 0:
+		if Input.is_action_just_pressed("ui_select") && (rotation > 0.75 || rotation < -2.80):
 			get_parent().plant()
-			get_parent().get_node("KinematicBody2D/AnimatedSprite").play("Tohum")
 		if Input.is_action_just_pressed("ui_select") && (rotation < -0.3 && rotation > -2.80) && temp != rotation:
 			temp = rotation
 			get_parent().collect()

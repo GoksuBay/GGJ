@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://dunya_cokbuyuk.png" type="Texture" id=1]
+[ext_resource path="res://dunya_finalest_final_v2.png" type="Texture" id=1]
 [ext_resource path="res://Earth.gd" type="Script" id=2]
 [ext_resource path="res://Node2D.gd" type="Script" id=3]
 [ext_resource path="res://testanim/2.png" type="Texture" id=4]
@@ -12,6 +12,7 @@
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=10]
 [ext_resource path="res://RichTextLabel.gd" type="Script" id=11]
 [ext_resource path="res://Game Over.tscn" type="PackedScene" id=12]
+[ext_resource path="res://c72aee7ba40af4513b7cf301cb4b4d81.jpg" type="Texture" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -29,6 +30,11 @@ animations = [ {
 [node name="Node2D" type="Node2D"]
 position = Vector2( 13.5661, 1.50734 )
 script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 623.479, 361.845 )
+scale = Vector2( 1.62039, 1.63024 )
+texture = ExtResource( 13 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 position = Vector2( 97.3199, 219.051 )
@@ -74,6 +80,26 @@ margin_left = 98.4211
 margin_top = -2.08057
 margin_right = 159.421
 margin_bottom = 54.9194
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="People" type="RichTextLabel" parent="."]
+margin_left = 287.513
+margin_top = 6.08167
+margin_right = 348.513
+margin_bottom = 63.0817
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rubbish" type="RichTextLabel" parent="."]
+margin_left = 419.469
+margin_top = 4.72131
+margin_right = 480.469
+margin_bottom = 61.7213
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false

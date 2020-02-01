@@ -20,11 +20,6 @@ var B = 255
 var yuzde
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	earthrot = get_node("Earth").rotation
@@ -38,18 +33,30 @@ func _ready():
 
 
 func temp_event(numofPeople):
-	if temperature > 21 && numofTrees < 5000:
+	if numofTrees < 5000:
 		temperature = 26-(plantedSeeds/10)
-	if temperature > 21 && numofTrees < 1000:
+		if temperature < 22:
+			temperature = 21
+	if numofTrees < 1000:
 		temperature = 33-(plantedSeeds/10)
-	if temperature > 21 && numofTrees < 500:
+		if temperature < 22:
+			temperature = 21
+	if numofTrees < 500:
 		temperature = 40-(plantedSeeds/10)
-	if temperature > 21 && numofTrees < 250:
+		if temperature < 22:
+			temperature = 21
+	if numofTrees < 250:
 		temperature = 46-(plantedSeeds/10)
-	if temperature > 21 && numofTrees < 150:
+		if temperature < 22:
+			temperature = 21
+	if numofTrees < 150:
 		temperature = 52-(plantedSeeds/10)
-	if temperature > 21 && numofTrees < 50:
+		if temperature < 22:
+			temperature = 21
+	if numofTrees < 50:
 		temperature = 63
+		if temperature < 22:
+			temperature = 21
 		pass
 
 func _physics_process(delta):
@@ -58,7 +65,7 @@ func _physics_process(delta):
 	time = s
 	if game_ending() != true:
 		during_game()
-	if numofTrees != 10000 && numofTrees%100 == 0:
+	if numofTrees != 10000 && numofTrees%200 == 0:
 		G -= 1
 		B -= 1
 	get_node("Sprite").modulate = Color8(255 , G , B)
@@ -88,20 +95,22 @@ func _physics_process(delta):
 	visibility()
 	
 	if game_ending():
+		temp_s = s
 		get_node("Game Over").visible = true
 		var DamageLabel = get_node("Game Over").get_node("Panel/num")
-		DamageLabel.text = str("%" , 100* plantedSeeds/(s/10) )
+		DamageLabel.text = str("%" , yuzde )
 		get_node("Earth").rotation_speed = 0
 		pass
 
 func game_ending():
 	if temperature == 63:
+		yuzde = 100* plantedSeeds/(temp_s/10)
 		return true
 	return false
 	pass
 
 func during_game():
-	if s > 60:
+	if s > 260:
 		numofPeople += 1
 		temp_event(numofPeople)
 	pass

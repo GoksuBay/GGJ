@@ -18,12 +18,15 @@ func _physics_process(delta):
 			$AnimatedSprite.play("default")
 			pass
 		else:
-			if Input.is_action_pressed("ui_right"):
-				$AnimatedSprite.flip_h = false
-				$AnimatedSprite.play("kosma")
+			if Input.is_action_pressed("ui_left") && Input.is_action_pressed("ui_right"):
+				$AnimatedSprite.play("default")
 			elif Input.is_action_pressed("ui_left"):
 				$AnimatedSprite.flip_h = true
 				$AnimatedSprite.play("kosma")
+			elif Input.is_action_pressed("ui_right"):
+				$AnimatedSprite.flip_h = false
+				$AnimatedSprite.play("kosma")
+			
 			else:
 				$AnimatedSprite.play("default")
 	else:

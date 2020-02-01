@@ -10,6 +10,12 @@ var temp
 
 func get_input():
 	if get_parent().game_ending() != true:
+		if rotation < 0.76 && rotation > -0.18:
+			rotation_speed = 0.4
+		elif rotation < -0.26 && rotation > -2.78:
+			rotation_speed = 0.5
+		else:
+			rotation_speed = 0.6
 		rotation_dir = 0
 		velocity = Vector2()
 		if Input.is_action_pressed('ui_right'):

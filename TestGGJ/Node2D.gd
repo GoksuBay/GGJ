@@ -21,6 +21,7 @@ var rubbish
 var G = 255
 var B = 255
 var yuzde
+var i = 0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -36,34 +37,36 @@ func _ready():
 
 
 func temp_event(numofPeople):
-	if numofTrees < 5000:
-		temperature = 26-(plantedSeeds/10)
+	if yuzde < 90:
+		temperature = 32-(plantedSeeds/30)
 		if temperature < 22:
 			temperature = 21
-	if numofTrees < 1000:
-		temperature = 33-(plantedSeeds/10)
+	if yuzde < 80:
+		temperature = 43-(plantedSeeds/30)
 		if temperature < 22:
 			temperature = 21
-	if numofTrees < 500:
-		temperature = 40-(plantedSeeds/10)
+	if yuzde < 50:
+		temperature = 52-(plantedSeeds/30)
 		if temperature < 22:
 			temperature = 21
-	if numofTrees < 250:
-		temperature = 46-(plantedSeeds/10)
+	if yuzde < 30:
+		temperature = 63-(plantedSeeds/30)
 		if temperature < 22:
 			temperature = 21
-	if numofTrees < 150:
-		temperature = 52-(plantedSeeds/10)
+	if yuzde < 20:
+		temperature = 68-(plantedSeeds/30)
 		if temperature < 22:
 			temperature = 21
-	if numofTrees < 50:
-		temperature = 63
+	if yuzde < 10:
+		temperature = 80-(plantedSeeds/30)
 		if temperature < 22:
 			temperature = 21
 		pass
+	if yuzde == 0:
+		temperature = 63
 
 func _physics_process(delta):
-	print(temp_m , " : " , temp_s)
+	print(get_node("Earth").rotation)
 	time = s
 	if game_ending() != true:
 		timer()
@@ -76,7 +79,9 @@ func _physics_process(delta):
 	if temp_ss*numofPeople > 10000 && game_ending() != true:
 		warm()
 		temp_ss = 0
-		
+	
+	yuzde = float(100*numofTrees/10000)
+	
 	var TreeLabel = get_node("Trees")
 	TreeLabel.text = str("%" , float(100*numofTrees/10000))
 	
@@ -101,14 +106,14 @@ func _physics_process(delta):
 	if game_ending():
 		get_node("Game Over").visible = true
 		var DamageLabel = get_node("Game Over").get_node("Panel/num")
-		DamageLabel.text = str(100*(plantedSeeds-rubbish)/numofPeople )
+		DamageLabel.text = str(plantedSeeds - (rubbish/100) )
 		get_node("Earth").rotation_speed = 0
 		var SureLabel = get_node("Game Over").get_node("Panel/sure")
 		SureLabel.text = str("Süre:" , temp_m , ":" , temp_s)
 		pass
 
 func game_ending():
-	if temperature == 63:
+	if temperature >= 63:
 		return true
 	return false
 	pass
@@ -159,14 +164,30 @@ func collect():
 	pass
 
 func visibility():
-	if numofTrees < 9000:
+	if yuzde < 90:
 		get_node("Earth/tree2").visible = false
-	if numofTrees < 8500:
 		get_node("Earth/tree13").visible = false
-	if numofTrees < 7500:
+	if yuzde < 80:
 		get_node("Earth/tree16").visible = false
-	if numofTrees < 7000:
 		get_node("Earth/tree").visible = false
+		get_node("Earth/tree10").visible = false
+		get_node("Earth/tree17").visible = false
+	if yuzde < 50:
+		get_node("Earth/tree20").visible = false
+		get_node("Earth/tree19").visible = false
+		get_node("Earth/tree11").visible = false
+		get_node("Earth/tree3").visible = false
+	if yuzde < 30:
+		get_node("Earth/tree4").visible = false
+		get_node("Earth/tree7").visible = false
+		get_node("Earth/tree8").visible = false
+		get_node("Earth/tree15").visible = false
+	if yuzde < 20:
+		get_node("Earth/tree6").visible = false
+		get_node("Earth/tree21").visible = false
+		get_node("Earth/tree5").visible = false
+		get_node("Earth/tree14").visible = false
+		get_node("Earth/tree12").visible = false
 
 func tempTimer():
 	temp_ms += 1

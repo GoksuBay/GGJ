@@ -73,8 +73,8 @@ func _physics_process(delta):
 		tempTimer()
 		during_game()
 	if numofTrees != 10000 && numofTrees%200 == 0:
-		G -= 2
-		B -= 2
+		G -= 3
+		B -= 3
 	get_node("Sprite").modulate = Color8(255 , G , B)
 	if temp_ss*numofPeople > 10000 && game_ending() != true:
 		warm()

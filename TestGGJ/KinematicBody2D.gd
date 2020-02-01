@@ -47,7 +47,7 @@ func _physics_process(delta):
 			$AnimatedSprite.speed_scale = 1.0
 			$AnimatedSprite.position = Vector2(551.772 , 187)
 			animation = false
-			if Input.is_action_pressed("ui_select") && (rotation < 0.75 || rotation > -2.80): 
+			if Input.is_action_pressed("ui_select") && (rotation < 0.75 || rotation > -2.80) && get_parent().numofSeeds > 0: 
 				print("work")
 				animation = true
 				$AnimatedSprite.play("Tohum")

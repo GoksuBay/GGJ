@@ -19,7 +19,7 @@ func get_input():
 		if Input.is_action_just_pressed("ui_select") && (rotation > 0.75 || rotation < -2.80) && temp != rotation:
 			get_parent().plant()
 			temp = rotation
-		if Input.is_action_just_pressed("ui_select") && (rotation < -0.29 || rotation > -2.80) && temp != rotation:
+		if Input.is_action_just_pressed("ui_select") && (rotation < -0.3 && rotation > -2.80) && temp != rotation:
 			temp = rotation
 			get_parent().collect()
 	pass

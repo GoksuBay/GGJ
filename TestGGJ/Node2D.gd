@@ -13,6 +13,9 @@ var timer = null
 var plantedSeeds = 0
 var time
 var temp_s = 0
+var temp_m = 0
+var temp_ss = 0
+var temp_ms = 0
 var earthrot
 var rubbish
 var G = 255
@@ -60,18 +63,19 @@ func temp_event(numofPeople):
 		pass
 
 func _physics_process(delta):
-	print(is_garden())
-	timer()
+	print(temp_m , " : " , temp_s)
 	time = s
 	if game_ending() != true:
+		timer()
+		tempTimer()
 		during_game()
 	if numofTrees != 10000 && numofTrees%200 == 0:
-		G -= 1
-		B -= 1
+		G -= 2
+		B -= 2
 	get_node("Sprite").modulate = Color8(255 , G , B)
-	if temp_s*numofPeople > 10000 && game_ending() != true:
+	if temp_ss*numofPeople > 10000 && game_ending() != true:
 		warm()
-		temp_s = 0
+		temp_ss = 0
 		
 	var TreeLabel = get_node("Trees")
 	TreeLabel.text = str("%" , float(100*numofTrees/10000))
@@ -95,16 +99,16 @@ func _physics_process(delta):
 	visibility()
 	
 	if game_ending():
-		temp_s = s
 		get_node("Game Over").visible = true
 		var DamageLabel = get_node("Game Over").get_node("Panel/num")
-		DamageLabel.text = str("%" , yuzde )
+		DamageLabel.text = str(100*(plantedSeeds-rubbish)/numofPeople )
 		get_node("Earth").rotation_speed = 0
+		var SureLabel = get_node("Game Over").get_node("Panel/sure")
+		SureLabel.text = str("Süre:" , temp_m , ":" , temp_s)
 		pass
 
 func game_ending():
 	if temperature == 63:
-		yuzde = 100* plantedSeeds/(temp_s/10)
 		return true
 	return false
 	pass
@@ -129,8 +133,8 @@ func timer():
 		s += 1
 	if s > 59:
 		m +=1
-	if ms > 9:
-		temp_s += 1
+	if ms > 59:
+		temp_ss += 1
 	pass
 
 func plant():
@@ -164,3 +168,14 @@ func visibility():
 	if numofTrees < 7000:
 		get_node("Earth/tree").visible = false
 
+func tempTimer():
+	temp_ms += 1
+	if temp_ms > 59:
+		temp_s += 1
+		temp_ms = 0
+	if temp_s > 59:
+		temp_m +=1
+		temp_s = 0
+	if temp_ms > 59:
+		temp_ss += 1
+	pass

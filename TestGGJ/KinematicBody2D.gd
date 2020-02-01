@@ -14,7 +14,7 @@ func _physics_process(delta):
 	if get_parent().game_ending() != true:
 		earthrot = get_parent().get_node("Earth").rotation
 		print("earth:" , earthrot)
-		if earthrot < -0.89 && earthrot > -2.78:
+		if earthrot < -0.26 && earthrot > -2.78:
 			$AnimatedSprite.play("default")
 			pass
 		else:

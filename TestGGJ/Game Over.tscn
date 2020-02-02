@@ -1,9 +1,17 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Game Over.gd" type="Script" id=1]
+[ext_resource path="res://ui/gameoverui-01.png" type="Texture" id=2]
+[ext_resource path="res://ui/quitbutton-01.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://FjallaOne-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = SubResource( 1 )
 
 [node name="Game Over" type="Popup"]
-visible = true
 margin_left = 166.941
 margin_top = 42.3573
 margin_right = 489.941
@@ -20,22 +28,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="gover" type="RichTextLabel" parent="Panel"]
-margin_right = 323.0
-margin_bottom = 59.0
-text = "GAME OVER"
-
-[node name="damage" type="RichTextLabel" parent="Panel"]
-margin_left = 2.0
-margin_top = 81.0
-margin_right = 174.0
-margin_bottom = 121.0
-text = "Puan:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Sprite" type="Sprite" parent="Panel"]
+position = Vector2( 273.556, 146.966 )
+scale = Vector2( 0.65443, 0.65443 )
+texture = ExtResource( 2 )
 
 [node name="num" type="RichTextLabel" parent="Panel"]
+visible = false
 margin_left = 162.494
 margin_top = 66.5451
 margin_right = 202.494
@@ -45,31 +44,40 @@ __meta__ = {
 }
 
 [node name="sure" type="RichTextLabel" parent="Panel"]
-margin_left = 170.0
-margin_top = 7.0
-margin_right = 315.0
-margin_bottom = 106.0
+margin_left = 201.492
+margin_top = 67.6503
+margin_right = 346.492
+margin_bottom = 166.65
+custom_fonts/normal_font = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Restart" type="Button" parent="Panel"]
-margin_left = 61.8631
-margin_top = 168.284
-margin_right = 133.863
-margin_bottom = 209.284
+margin_left = 193.184
+margin_top = 132.912
+margin_right = 345.184
+margin_bottom = 219.912
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="Panel/Restart"]
+
 [node name="Quit" type="Button" parent="Panel"]
-margin_left = 197.863
-margin_top = 168.284
-margin_right = 269.863
-margin_bottom = 209.284
+margin_left = 211.0
+margin_top = 234.0
+margin_right = 327.0
+margin_bottom = 281.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="Panel/Quit"]
+position = Vector2( -2, 0 )
+scale = Vector2( 0.292963, 0.292963 )
+texture = ExtResource( 3 )
+centered = false
 [connection signal="pressed" from="Panel/Restart" to="." method="_on_Restart_pressed"]
 [connection signal="pressed" from="Panel/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="Panel/Quit" to="." method="_on_Restart_pressed"]

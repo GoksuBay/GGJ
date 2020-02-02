@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=83 format=2]
 
 [ext_resource path="res://dunya_finalest_final_v2.png" type="Texture" id=1]
 [ext_resource path="res://Earth.gd" type="Script" id=2]
@@ -58,7 +58,12 @@
 [ext_resource path="res://prop/fab_2.png" type="Texture" id=56]
 [ext_resource path="res://prop/fab_6.png" type="Texture" id=57]
 [ext_resource path="res://prop/fab_7.png" type="Texture" id=58]
-[ext_resource path="res://icon.png" type="Texture" id=59]
+[ext_resource path="res://ui/signals-02.png" type="Texture" id=59]
+[ext_resource path="res://ui/monitor-01.png" type="Texture" id=60]
+[ext_resource path="res://ui/signals-03.png" type="Texture" id=61]
+[ext_resource path="res://ui/signals-01.png" type="Texture" id=62]
+[ext_resource path="res://arka1-1920x900.jpg" type="Texture" id=63]
+[ext_resource path="res://Müzik.tscn" type="PackedScene" id=64]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -152,7 +157,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1229.67, -41.8531 ), Vector2( 1229.67, 30.1469 ) ]
+"values": [ Vector2( 1101.67, -49.8531 ), Vector2( 1101.99, 48.563 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -167,7 +172,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1229.67, -33.8531 ), Vector2( 1229.67, 30.1469 ) ]
+"values": [ Vector2( 1101.67, -49.853 ), Vector2( 1101.67, 46.147 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -182,7 +187,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1229.39, -41.1458 ), Vector2( 1229.39, 30.8542 ) ]
+"values": [ Vector2( 1102.12, -49.853 ), Vector2( 1101.67, 46.147 ) ]
 }
 
 [node name="Node2D" type="Node2D"]
@@ -200,25 +205,55 @@ script = ExtResource( 2 )
 
 [node name="fab" type="AnimatedSprite" parent="Earth"]
 visible = false
-position = Vector2( -602.948, -2269.73 )
-rotation = -0.330743
+position = Vector2( -714, -2274.41 )
+rotation = -0.335372
+scale = Vector2( 0.744096, 0.744096 )
+frames = SubResource( 1 )
+animation = "anim"
+frame = 2
+playing = true
+
+[node name="fab2" type="AnimatedSprite" parent="Earth"]
+visible = false
+position = Vector2( -413.228, -2296.41 )
+rotation = -0.229218
+scale = Vector2( 0.639355, 0.639355 )
+frames = SubResource( 1 )
+animation = "anim"
+frame = 2
+playing = true
+
+[node name="fab4" type="AnimatedSprite" parent="Earth"]
+visible = false
+position = Vector2( -1075.08, -2115.21 )
+rotation = -0.487051
+scale = Vector2( 0.731192, 0.731192 )
+frames = SubResource( 1 )
+animation = "anim"
+frame = 1
+playing = true
+
+[node name="fab3" type="AnimatedSprite" parent="Earth"]
+visible = false
+position = Vector2( 275.105, -2289.46 )
+rotation = 0.0925365
 scale = Vector2( 0.608653, 0.608653 )
 frames = SubResource( 1 )
 animation = "anim"
-frame = 5
+frame = 1
 playing = true
 
 [node name="evre14" type="Sprite" parent="Earth"]
 visible = false
-position = Vector2( -1429.75, -2591.2 )
-rotation = -0.52525
+position = Vector2( -1431.91, -2591.2 )
+rotation = -0.504587
 scale = Vector2( 0.725708, 0.725708 )
 texture = ExtResource( 51 )
 
 [node name="evre13" type="Sprite" parent="Earth"]
 visible = false
 position = Vector2( -151.906, -2911.52 )
-rotation = -0.0120361
+rotation = -0.0566277
 scale = Vector2( 0.694482, 0.70373 )
 texture = ExtResource( 51 )
 
@@ -344,7 +379,7 @@ texture = ExtResource( 37 )
 
 [node name="tree" type="Sprite" parent="Earth"]
 position = Vector2( -2050.26, -1232.62 )
-rotation = -1.05597
+rotation = -1.02749
 scale = Vector2( 0.649263, 0.649263 )
 texture = ExtResource( 19 )
 
@@ -356,13 +391,13 @@ texture = ExtResource( 19 )
 
 [node name="tree20" type="Sprite" parent="Earth"]
 position = Vector2( 666.847, 2240.12 )
-rotation = -3.52949
+rotation = -3.44063
 scale = Vector2( 0.649263, 0.649263 )
 texture = ExtResource( 19 )
 
 [node name="tree3" type="Sprite" parent="Earth"]
-position = Vector2( -2098.39, -732.928 )
-rotation = -1.28414
+position = Vector2( -2165.34, -730.138 )
+rotation = -1.21723
 scale = Vector2( 0.512865, 0.512865 )
 texture = ExtResource( 21 )
 
@@ -404,7 +439,7 @@ texture = ExtResource( 20 )
 
 [node name="tree2" type="Sprite" parent="Earth"]
 position = Vector2( -1726.1, -1414.18 )
-rotation = -0.973596
+rotation = -0.906277
 scale = Vector2( 0.325738, 0.325738 )
 texture = ExtResource( 20 )
 
@@ -451,8 +486,8 @@ scale = Vector2( 0.325738, 0.325738 )
 texture = ExtResource( 20 )
 
 [node name="tree7" type="Sprite" parent="Earth"]
-position = Vector2( -2135.63, -558.719 )
-rotation = -1.28373
+position = Vector2( -2146.79, -519.666 )
+rotation = -1.35172
 scale = Vector2( 0.325738, 0.325738 )
 texture = ExtResource( 20 )
 
@@ -472,14 +507,14 @@ texture = ExtResource( 20 )
 texture = ExtResource( 1 )
 
 [node name="cop" type="Sprite" parent="Earth"]
-position = Vector2( 948.681, -1820.41 )
-rotation = 0.596088
+position = Vector2( 960.553, -1821.81 )
+rotation = 0.534952
 scale = Vector2( 0.1863, 0.1863 )
 texture = ExtResource( 39 )
 
 [node name="cop2" type="Sprite" parent="Earth"]
 position = Vector2( 1331.87, 1570.54 )
-rotation = 2.39742
+rotation = 2.42396
 scale = Vector2( 0.1863, 0.1863 )
 texture = ExtResource( 38 )
 
@@ -490,44 +525,44 @@ scale = Vector2( 0.1863, 0.1863 )
 texture = ExtResource( 40 )
 
 [node name="cop10" type="Sprite" parent="Earth"]
-position = Vector2( 1947.25, -707.615 )
+position = Vector2( 1935.38, -703.425 )
 rotation = 1.24867
 scale = Vector2( 0.1863, 0.1863 )
 texture = ExtResource( 38 )
 
 [node name="cop11" type="Sprite" parent="Earth"]
-position = Vector2( 2016.92, -484.13 )
-rotation = 1.24867
+position = Vector2( 2009.94, -482.035 )
+rotation = 1.35157
 scale = Vector2( 0.1863, 0.1863 )
 texture = ExtResource( 38 )
 
 [node name="cop3" type="Sprite" parent="Earth"]
-position = Vector2( 1698.81, 1147.57 )
-rotation = 2.09439
+position = Vector2( 1692.52, 1163.63 )
+rotation = 2.15278
 scale = Vector2( 0.1863, 0.1863 )
 texture = ExtResource( 38 )
 
 [node name="cop4" type="Sprite" parent="Earth"]
-position = Vector2( 1653.75, -1224.77 )
-rotation = 0.785397
+position = Vector2( 1644.67, -1237.34 )
+rotation = 0.880726
 scale = Vector2( 0.1863, 0.1863 )
 texture = ExtResource( 41 )
 
 [node name="cop5" type="Sprite" parent="Earth"]
-position = Vector2( 1806.85, -1013.35 )
+position = Vector2( 1801.26, -1001.48 )
 rotation = 1.11792
 scale = Vector2( 0.1863, 0.1863 )
 texture = ExtResource( 40 )
 
 [node name="cop6" type="Sprite" parent="Earth"]
-position = Vector2( 1454.74, -1452.07 )
-rotation = 0.899566
+position = Vector2( 1469.41, -1444.39 )
+rotation = 0.785397
 scale = Vector2( 0.1863, 0.1863 )
 texture = ExtResource( 41 )
 
 [node name="cop7" type="Sprite" parent="Earth"]
 position = Vector2( 1255.99, -1645.18 )
-rotation = 0.596088
+rotation = 0.68419
 scale = Vector2( 0.234061, 0.234061 )
 texture = ExtResource( 38 )
 
@@ -538,14 +573,14 @@ scale = Vector2( 0.1863, 0.1863 )
 texture = ExtResource( 38 )
 
 [node name="cop12" type="Sprite" parent="Earth"]
-position = Vector2( 1821.78, 973.387 )
-rotation = 2.13397
+position = Vector2( 1813.4, 970.594 )
+rotation = 2.11881
 scale = Vector2( 0.1863, 0.1863 )
 texture = ExtResource( 38 )
 
 [node name="cop13" type="Sprite" parent="Earth"]
-position = Vector2( 2066.83, -226.616 )
-rotation = 1.58133
+position = Vector2( 2054.96, -221.728 )
+rotation = 1.54176
 scale = Vector2( 0.1863, 0.1863 )
 texture = ExtResource( 38 )
 
@@ -567,72 +602,73 @@ rotation = 1.58133
 scale = Vector2( 0.1863, 0.1863 )
 texture = ExtResource( 38 )
 
-[node name="evre2" type="Sprite" parent="Earth"]
-visible = false
-position = Vector2( -896.29, -1935.76 )
-rotation = -0.433598
-scale = Vector2( 0.636052, 0.636052 )
-texture = ExtResource( 46 )
-
 [node name="evre1" type="Sprite" parent="Earth"]
 visible = false
-position = Vector2( -1147.32, -1831.79 )
-rotation = -0.609474
-scale = Vector2( 0.68669, 0.68669 )
+position = Vector2( -1036.88, -1804.75 )
+rotation = -0.569723
+scale = Vector2( 0.634202, 0.634202 )
 texture = ExtResource( 46 )
 
-[node name="evre4" type="Sprite" parent="Earth"]
+[node name="evre2" type="Sprite" parent="Earth"]
 visible = false
-position = Vector2( 21.7675, -2140.52 )
+position = Vector2( -216.371, -2089.01 )
+rotation = -0.0455713
 scale = Vector2( 0.636052, 0.636052 )
-texture = ExtResource( 46 )
-
-[node name="evre3" type="Sprite" parent="Earth"]
-visible = false
-position = Vector2( -224.948, -2144.47 )
-scale = Vector2( 0.68669, 0.68669 )
 texture = ExtResource( 46 )
 
 [node name="evre8" type="Sprite" parent="Earth"]
 visible = false
-position = Vector2( 21.0655, -2272.45 )
+position = Vector2( -22.1041, -2244.39 )
 scale = Vector2( 0.71182, 0.71182 )
 texture = ExtResource( 47 )
 
 [node name="evre7" type="Sprite" parent="Earth"]
 visible = false
-position = Vector2( -940.109, -2058.43 )
+position = Vector2( -922.841, -2032.53 )
 rotation = -0.440255
 scale = Vector2( 0.68669, 0.68669 )
 texture = ExtResource( 48 )
 
 [node name="evre10" type="Sprite" parent="Earth"]
 visible = false
-position = Vector2( -64.5157, -2275.14 )
+position = Vector2( -62.3572, -2216.86 )
 scale = Vector2( 0.71182, 0.71182 )
 texture = ExtResource( 50 )
 
 [node name="evre9" type="Sprite" parent="Earth"]
 visible = false
-position = Vector2( -934.317, -2051.16 )
+position = Vector2( -910.574, -2018.78 )
 rotation = -0.440255
 scale = Vector2( 0.68669, 0.68669 )
 texture = ExtResource( 50 )
 
 [node name="evre11" type="Sprite" parent="Earth"]
 visible = false
-position = Vector2( -1310.1, -1784.15 )
-rotation = -0.537982
+position = Vector2( -1292.83, -1777.67 )
+rotation = -0.656523
 scale = Vector2( 0.177636, 0.177636 )
 texture = ExtResource( 49 )
 flip_h = true
 
 [node name="evre12" type="Sprite" parent="Earth"]
 visible = false
-position = Vector2( -580.411, -2135.28 )
-rotation = -0.261799
+position = Vector2( -470.329, -2163.34 )
+rotation = -0.196601
 scale = Vector2( 0.177636, 0.177636 )
 texture = ExtResource( 49 )
+
+[node name="Kırmızı Filtre" type="Sprite" parent="."]
+visible = false
+modulate = Color( 0.65098, 0.388235, 0.388235, 0.466667 )
+position = Vector2( 628.449, 357.891 )
+scale = Vector2( 0.670007, 0.805928 )
+texture = ExtResource( 63 )
+
+[node name="Game Over" parent="." instance=ExtResource( 12 )]
+margin_left = 385.363
+margin_top = -0.365204
+margin_right = 702.363
+margin_bottom = 238.635
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 position = Vector2( 97.3199, 219.051 )
@@ -649,16 +685,15 @@ frames = SubResource( 3 )
 animation = "Tohum"
 frame = 3
 
-[node name="Game Over" parent="." instance=ExtResource( 12 )]
-visible = true
-margin_left = 481.739
-margin_top = 49.7469
-margin_right = 798.739
-margin_bottom = 288.747
+[node name="Monitor" type="Sprite" parent="."]
+position = Vector2( 64.2661, 140.64 )
+texture = ExtResource( 60 )
 
 [node name="Trees" type="RichTextLabel" parent="."]
-margin_right = 61.0
-margin_bottom = 57.0
+margin_left = 47.2007
+margin_top = 66.2958
+margin_right = 108.201
+margin_bottom = 123.296
 custom_fonts/normal_font = SubResource( 8 )
 script = ExtResource( 11 )
 __meta__ = {
@@ -666,10 +701,10 @@ __meta__ = {
 }
 
 [node name="Seeds" type="RichTextLabel" parent="."]
-margin_left = 4.01987
-margin_top = 35.0609
-margin_right = 65.0199
-margin_bottom = 92.0609
+margin_left = 52.7937
+margin_top = 238.405
+margin_right = 113.794
+margin_bottom = 295.405
 custom_fonts/normal_font = SubResource( 10 )
 script = ExtResource( 11 )
 __meta__ = {
@@ -677,10 +712,10 @@ __meta__ = {
 }
 
 [node name="Temperature" type="RichTextLabel" parent="."]
-margin_left = 98.4211
-margin_top = -2.08057
-margin_right = 159.421
-margin_bottom = 54.9194
+margin_left = 45.8398
+margin_top = 122.655
+margin_right = 106.84
+margin_bottom = 179.655
 custom_fonts/normal_font = SubResource( 12 )
 script = ExtResource( 11 )
 __meta__ = {
@@ -688,10 +723,10 @@ __meta__ = {
 }
 
 [node name="People" type="RichTextLabel" parent="."]
-margin_left = 287.513
-margin_top = 6.08167
-margin_right = 348.513
-margin_bottom = 63.0817
+margin_left = 43.224
+margin_top = 13.4749
+margin_right = 104.224
+margin_bottom = 70.475
 custom_fonts/normal_font = SubResource( 14 )
 script = ExtResource( 11 )
 __meta__ = {
@@ -699,10 +734,10 @@ __meta__ = {
 }
 
 [node name="Rubbish" type="RichTextLabel" parent="."]
-margin_left = 419.469
-margin_top = 4.72131
-margin_right = 480.469
-margin_bottom = 61.7213
+margin_left = 50.0535
+margin_top = 179.573
+margin_right = 111.053
+margin_bottom = 236.573
 custom_fonts/normal_font = SubResource( 16 )
 script = ExtResource( 11 )
 __meta__ = {
@@ -710,6 +745,7 @@ __meta__ = {
 }
 
 [node name="Planted" type="RichTextLabel" parent="."]
+visible = false
 margin_left = 414.195
 margin_top = 55.7059
 margin_right = 475.195
@@ -721,20 +757,23 @@ __meta__ = {
 }
 
 [node name="insan_geliyor" type="Sprite" parent="."]
-position = Vector2( 1229.67, -41.8531 )
-texture = ExtResource( 59 )
+position = Vector2( 1101.67, -49.8531 )
+scale = Vector2( 0.552041, 0.552041 )
+texture = ExtResource( 62 )
 
 [node name="agac_kesiliyor" type="Sprite" parent="."]
-position = Vector2( 1229.67, -41.8531 )
+position = Vector2( 1101.67, -49.853 )
+scale = Vector2( 0.555047, 0.555047 )
 texture = ExtResource( 59 )
 
 [node name="cop_birikti" type="Sprite" parent="."]
-position = Vector2( 1229.39, -41.1458 )
-texture = ExtResource( 59 )
+position = Vector2( 1102.12, -49.853 )
+scale = Vector2( 0.563287, 0.563287 )
+texture = ExtResource( 61 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Yeni Animasyon" = SubResource( 4 )
 anims/agac = SubResource( 5 )
 anims/cop = SubResource( 6 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Müzikler" parent="." instance=ExtResource( 64 )]

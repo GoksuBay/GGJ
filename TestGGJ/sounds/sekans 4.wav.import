@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sekans 4.wav-8ab62aff7a63d22879c33b880aa5d0a0.sample"
+
+[deps]
+
+source_file="res://sounds/sekans 4.wav"
+dest_files=[ "res://.import/sekans 4.wav-8ab62aff7a63d22879c33b880aa5d0a0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

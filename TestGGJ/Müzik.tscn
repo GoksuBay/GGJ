@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sounds/ggj default.wav" type="AudioStream" id=1]
+[ext_resource path="res://sounds/sekans 3.wav" type="AudioStream" id=2]
+[ext_resource path="res://sounds/sekans 4.wav" type="AudioStream" id=3]
+[ext_resource path="res://sounds/sekans 2.wav" type="AudioStream" id=4]
+
+[node name="Müzikler" type="Node"]
+
+[node name="default" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+
+[node name="sekans2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="sekans3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="sekans4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )

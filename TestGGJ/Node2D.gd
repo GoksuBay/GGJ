@@ -23,11 +23,29 @@ var B = 255
 var yuzde
 var i = 0
 var copbool
-
+var insanbool
+var agacbool
+var defaultbool
+var sekans2bool
+var sekans3bool
+var sekans4bool
+var defaultIterator
+var sekans2Iterator
+var sekans3Iterator
+var sekans4Iterator
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	earthrot = get_node("Earth").rotation
+	defaultbool = true
+	sekans2bool = true
+	sekans3bool = true
+	sekans4bool = true
+	defaultIterator = 0
+	sekans2Iterator = 0
+	sekans3Iterator = 0
+	sekans4Iterator = 0
+	sekans4Iterator = 0
 	numofPeople = 1
 	temperature = 21
 	numofTrees = 10000
@@ -35,6 +53,8 @@ func _ready():
 	rubbish = 0
 	get_node("Sprite").modulate = Color8(255 , 0 , 0)
 	copbool = false
+	insanbool = true
+	agacbool = true
 	pass # Replace with function body.
 
 
@@ -68,6 +88,7 @@ func temp_event(numofPeople):
 		temperature = 63
 
 func _physics_process(delta):
+	musics()
 	print()
 	time = s
 	if game_ending() != true:
@@ -86,7 +107,7 @@ func _physics_process(delta):
 	yuzde = float(100*numofTrees/10000)
 	
 	var TreeLabel = get_node("Trees")
-	TreeLabel.text = str("%" , float(100*numofTrees/10000))
+	TreeLabel.text = str(float(100*numofTrees/10000) , "%" )
 	
 	var SeedLabel = get_node("Seeds")
 	SeedLabel.text = str(numofSeeds)
@@ -99,7 +120,7 @@ func _physics_process(delta):
 	PeopleLabel.text = str(numofPeople)
 	
 	var RubbishLabel = get_node("Rubbish")
-	RubbishLabel.text = str(rubbish)
+	RubbishLabel.text = str(rubbish*100/20 , "%")
 	
 	var PlantedLabel = get_node("Planted")
 	PlantedLabel.text = str(plantedSeeds)
@@ -112,7 +133,9 @@ func _physics_process(delta):
 		DamageLabel.text = str(plantedSeeds - (rubbish/100) )
 		get_node("Earth").rotation_speed = 0
 		var SureLabel = get_node("Game Over").get_node("Panel/sure")
-		SureLabel.text = str("Süre:" , temp_m , ":" , temp_s)
+		SureLabel.text = str("TIME " , temp_m , ": " , temp_s)
+		$"Kırmızı Filtre".visible = true
+		$cop_birikti.visible = false
 		pass
 
 func game_ending():
@@ -131,7 +154,7 @@ func warm():
 	numofTrees -= 1
 	if numofTrees%10 == 0:
 		numofSeeds += 1
-	if temp_s%10 == 0:
+	if temp_s%20 == 0:
 		rubbish += 1
 		rubbish += rubbish/2
 	if rubbish > 20:
@@ -261,14 +284,9 @@ func visibility():
 	if numofPeople > 100 && numofPeople < 2000:
 		get_node("Earth/evre1").visible = true
 		get_node("Earth/evre2").visible = true
-		get_node("Earth/evre3").visible = true
-		get_node("Earth/evre4").visible = true
 	else:
 		get_node("Earth/evre1").visible = false
 		get_node("Earth/evre2").visible = false
-		get_node("Earth/evre3").visible = false
-		get_node("Earth/evre4").visible = false
-		get_node("Earth/evre4").visible = false
 	if numofPeople > 2000 && numofPeople < 5000:
 		get_node("Earth/evre7").visible = true
 		get_node("Earth/evre8").visible = true
@@ -282,11 +300,22 @@ func visibility():
 		get_node("Earth/evre12").visible = true
 	else:
 		get_node("Earth/evre10").visible = false
+		get_node("Earth/evre9").visible = false
 
-	if numofPeople > 8000 && numofPeople < 13000:
+	if numofPeople > 8000 && numofPeople < 10000:
 		get_node("Earth/evre13").visible = true
 		get_node("Earth/evre14").visible = true
 		get_node("Earth/fab").visible = true
+	
+	else:
+		get_node("Earth/evre13").visible = false
+		get_node("Earth/evre14").visible = false
+		get_node("Earth/fab").visible = false
+	if numofPeople > 10000:
+		get_node("Earth/fab2").visible = true
+		get_node("Earth/fab3").visible = true
+		get_node("Earth/fab4").visible = true
+		
 
 func tempTimer():
 	temp_ms += 1
@@ -301,14 +330,16 @@ func tempTimer():
 	pass
 
 func popupEvent():
-	if temp_s == 5:
+	if temp_s == 5 && insanbool:
 		$AnimationPlayer.play("Yeni Animasyon")
-	elif temp_s == 10:
+	elif temp_s == 10 && insanbool:
 		$AnimationPlayer.play_backwards("Yeni Animasyon")
-	if temp_s == 17:
+		insanbool = false
+	if temp_s == 17 && agacbool:
 		$AnimationPlayer.play("agac")
-	elif temp_s == 23:
+	elif temp_s == 23 && agacbool:
 		$AnimationPlayer.play_backwards("agac")
+		agacbool = false
 	if rubbish == 20 && !(copbool):
 		$AnimationPlayer.play("cop")
 		copbool = true
@@ -316,3 +347,25 @@ func popupEvent():
 		$AnimationPlayer.play_backwards("cop")
 		copbool = false
 	pass
+
+func musics():
+	if numofPeople < 3000 && !(get_node("Müzikler/default").is_playing()):
+		get_node("Müzikler/default").play()
+		defaultbool = false
+	elif numofPeople > 3500 && defaultIterator > -72:
+		get_node("Müzikler/default").volume_db = defaultIterator
+		defaultIterator -=1
+	if numofPeople > 3600 && !(get_node("Müzikler/sekans2").is_playing()) && numofPeople < 6000:
+		get_node("Müzikler/sekans2").play()
+		sekans2bool = false
+	elif numofPeople > 6000 && sekans2Iterator > -72:
+		get_node("Müzikler/sekans2").volume_db = sekans2Iterator
+		sekans2Iterator -= 1
+	if numofPeople > 6100 && !(get_node("Müzikler/sekans3").is_playing()) && numofPeople < 9000:
+		get_node("Müzikler/sekans3").play()
+	elif numofPeople > 9000 && sekans3Iterator > -72:
+		get_node("Müzikler/sekans2").volume_db = sekans3Iterator
+		sekans3Iterator -= 1
+	if numofPeople > 9100 && !(get_node("Müzikler/sekans4").is_playing()):
+		get_node("Müzikler/sekans4").play()
+	

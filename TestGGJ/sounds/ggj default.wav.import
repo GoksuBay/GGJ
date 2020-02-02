@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ggj default.wav-bd6af86d9098dddc4c3943c68d5e0688.sample"
+
+[deps]
+
+source_file="res://sounds/ggj default.wav"
+dest_files=[ "res://.import/ggj default.wav-bd6af86d9098dddc4c3943c68d5e0688.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

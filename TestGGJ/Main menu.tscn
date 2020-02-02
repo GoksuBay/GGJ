@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Control.gd" type="Script" id=1]
 [ext_resource path="res://s-0077dd1042897523ed4e7606c43c919d17df26ba.jpg" type="Texture" id=2]
@@ -15,6 +15,9 @@
 [ext_resource path="res://charanim/r5.png" type="Texture" id=13]
 [ext_resource path="res://charanim/3.png" type="Texture" id=14]
 [ext_resource path="res://charanim/4.png" type="Texture" id=15]
+[ext_resource path="res://ui/playbutton-01.png" type="Texture" id=16]
+[ext_resource path="res://ui/quitbutton-01.png" type="Texture" id=17]
+[ext_resource path="res://Müzik.tscn" type="PackedScene" id=18]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -31,6 +34,8 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Müzikler" parent="." instance=ExtResource( 18 )]
 
 [node name="Panel" type="Panel" parent="."]
 margin_right = 1281.0
@@ -52,37 +57,49 @@ position = Vector2( -2.77075, -3.71973 )
 rotation = 0.785397
 texture = ExtResource( 3 )
 
-[node name="Karakter" type="AnimatedSprite" parent="Panel"]
-position = Vector2( 637.89, 428.162 )
-scale = Vector2( 0.258913, 0.258913 )
-frames = SubResource( 1 )
-frame = 7
-playing = true
-flip_h = true
-
 [node name="Siyah" type="Sprite" parent="Panel"]
-modulate = Color( 1, 1, 1, 0.47451 )
+modulate = Color( 0, 0, 0, 0.505882 )
 position = Vector2( 641.372, 362.919 )
 scale = Vector2( 1.78582, 1.79523 )
 texture = ExtResource( 2 )
 
+[node name="Karakter" type="AnimatedSprite" parent="Panel"]
+modulate = Color( 1, 1, 1, 0.803922 )
+position = Vector2( 637.89, 428.162 )
+scale = Vector2( 0.258913, 0.258913 )
+frames = SubResource( 1 )
+frame = 10
+playing = true
+flip_h = true
+
 [node name="Start" type="Button" parent="Panel"]
-margin_left = 527.0
-margin_top = 77.0
-margin_right = 758.0
-margin_bottom = 161.0
+margin_left = 480.0
+margin_top = 47.0
+margin_right = 809.0
+margin_bottom = 140.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="Panel/Start"]
+scale = Vector2( 0.591412, 0.591413 )
+texture = ExtResource( 16 )
+centered = false
+
 [node name="Quit" type="Button" parent="Panel"]
-margin_left = 527.0
-margin_top = 205.0
-margin_right = 758.0
-margin_bottom = 278.0
+margin_left = 544.466
+margin_top = 189.861
+margin_right = 737.466
+margin_bottom = 260.861
+mouse_default_cursor_shape = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="Panel/Quit"]
+scale = Vector2( 0.462865, 0.462864 )
+texture = ExtResource( 17 )
+centered = false
 [connection signal="pressed" from="Panel/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="Panel/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="Panel/Quit" to="." method="_on_Start_pressed"]

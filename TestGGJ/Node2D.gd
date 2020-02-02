@@ -283,6 +283,7 @@ func visibility():
 	if numofPeople > 8000 && numofPeople < 13000:
 		get_node("Earth/evre13").visible = true
 		get_node("Earth/evre14").visible = true
+		get_node("Earth/fab").visible = true
 
 func tempTimer():
 	temp_ms += 1

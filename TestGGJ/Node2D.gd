@@ -22,6 +22,7 @@ var G = 255
 var B = 255
 var yuzde
 var i = 0
+var copbool
 
 
 # Called when the node enters the scene tree for the first time.
@@ -33,6 +34,7 @@ func _ready():
 	numofSeeds = 0
 	rubbish = 0
 	get_node("Sprite").modulate = Color8(255 , 0 , 0)
+	copbool = false
 	pass # Replace with function body.
 
 
@@ -72,6 +74,7 @@ func _physics_process(delta):
 		timer()
 		tempTimer()
 		during_game()
+		popupEvent()
 	if numofTrees != 10000 && numofTrees%200 == 0:
 		G -= 3
 		B -= 3
@@ -295,4 +298,21 @@ func tempTimer():
 		temp_s = 0
 	if temp_ms > 59:
 		temp_ss += 1
+	pass
+
+func popupEvent():
+	if temp_s == 5:
+		$AnimationPlayer.play("Yeni Animasyon")
+	elif temp_s == 10:
+		$AnimationPlayer.play_backwards("Yeni Animasyon")
+	if temp_s == 17:
+		$AnimationPlayer.play("agac")
+	elif temp_s == 23:
+		$AnimationPlayer.play_backwards("agac")
+	if rubbish == 20 && !(copbool):
+		$AnimationPlayer.play("cop")
+		copbool = true
+	if rubbish != 20 && copbool:
+		$AnimationPlayer.play_backwards("cop")
+		copbool = false
 	pass

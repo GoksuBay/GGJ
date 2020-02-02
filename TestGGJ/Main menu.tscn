@@ -56,6 +56,7 @@ texture = ExtResource( 3 )
 position = Vector2( 637.89, 428.162 )
 scale = Vector2( 0.258913, 0.258913 )
 frames = SubResource( 1 )
+frame = 7
 playing = true
 flip_h = true
 

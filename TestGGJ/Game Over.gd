@@ -14,3 +14,8 @@ func _ready():
 func _on_Restart_pressed():
 	get_tree().reload_current_scene()
 	pass
+
+
+func _on_Quit_pressed():
+	get_tree().quit()
+	pass # Replace with function body.

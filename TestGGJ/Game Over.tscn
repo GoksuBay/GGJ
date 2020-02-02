@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Game Over.gd" type="Script" id=1]
 [ext_resource path="res://ui/gameoverui-01.png" type="Texture" id=2]
 [ext_resource path="res://ui/quitbutton-01.png" type="Texture" id=3]
+[ext_resource path="res://ui/restart-01.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://FjallaOne-Regular.ttf"
@@ -12,6 +13,7 @@ size = 32
 font_data = SubResource( 1 )
 
 [node name="Game Over" type="Popup"]
+visible = true
 margin_left = 166.941
 margin_top = 42.3573
 margin_right = 489.941
@@ -54,15 +56,19 @@ __meta__ = {
 }
 
 [node name="Restart" type="Button" parent="Panel"]
-margin_left = 193.184
-margin_top = 132.912
-margin_right = 345.184
-margin_bottom = 219.912
+margin_left = 171.0
+margin_top = 131.0
+margin_right = 401.0
+margin_bottom = 198.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Sprite" type="Sprite" parent="Panel/Restart"]
+position = Vector2( -1.92432, -2.16635 )
+scale = Vector2( 0.440732, 0.431403 )
+texture = ExtResource( 4 )
+centered = false
 
 [node name="Quit" type="Button" parent="Panel"]
 margin_left = 211.0

@@ -1,6 +1,28 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Control.gd" type="Script" id=1]
+[ext_resource path="res://s-0077dd1042897523ed4e7606c43c919d17df26ba.jpg" type="Texture" id=2]
+[ext_resource path="res://dunya_finalest_final_v2.png" type="Texture" id=3]
+[ext_resource path="res://c72aee7ba40af4513b7cf301cb4b4d81.jpg" type="Texture" id=4]
+[ext_resource path="res://charanim/1.png" type="Texture" id=5]
+[ext_resource path="res://charanim/2.png" type="Texture" id=6]
+[ext_resource path="res://charanim/6.png" type="Texture" id=7]
+[ext_resource path="res://charanim/r2.png" type="Texture" id=8]
+[ext_resource path="res://charanim/r1.png" type="Texture" id=9]
+[ext_resource path="res://charanim/r4.png" type="Texture" id=10]
+[ext_resource path="res://charanim/5.png" type="Texture" id=11]
+[ext_resource path="res://charanim/r3.png" type="Texture" id=12]
+[ext_resource path="res://charanim/r5.png" type="Texture" id=13]
+[ext_resource path="res://charanim/3.png" type="Texture" id=14]
+[ext_resource path="res://charanim/4.png" type="Texture" id=15]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -17,12 +39,50 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Background" type="Sprite" parent="Panel"]
+position = Vector2( 639.762, 357.512 )
+scale = Vector2( 1.62485, 1.6205 )
+texture = ExtResource( 4 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Panel"]
+position = Vector2( 668.339, 2597.06 )
+
+[node name="Dünya" type="Sprite" parent="Panel/KinematicBody2D"]
+position = Vector2( -2.77075, -3.71973 )
+rotation = 0.785397
+texture = ExtResource( 3 )
+
+[node name="Karakter" type="AnimatedSprite" parent="Panel"]
+position = Vector2( 637.89, 428.162 )
+scale = Vector2( 0.258913, 0.258913 )
+frames = SubResource( 1 )
+frame = 7
+playing = true
+flip_h = true
+
+[node name="Siyah" type="Sprite" parent="Panel"]
+modulate = Color( 1, 1, 1, 0.47451 )
+position = Vector2( 641.372, 362.919 )
+scale = Vector2( 1.78582, 1.79523 )
+texture = ExtResource( 2 )
+
 [node name="Start" type="Button" parent="Panel"]
-margin_left = 527.499
-margin_top = 460.667
-margin_right = 758.499
-margin_bottom = 592.667
+margin_left = 527.0
+margin_top = 77.0
+margin_right = 758.0
+margin_bottom = 161.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="Panel"]
+margin_left = 527.0
+margin_top = 205.0
+margin_right = 758.0
+margin_bottom = 278.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="Panel/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Panel/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Panel/Quit" to="." method="_on_Start_pressed"]

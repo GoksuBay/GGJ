@@ -210,7 +210,7 @@ rotation = -0.335372
 scale = Vector2( 0.744096, 0.744096 )
 frames = SubResource( 1 )
 animation = "anim"
-frame = 2
+frame = 1
 playing = true
 
 [node name="fab2" type="AnimatedSprite" parent="Earth"]
@@ -220,7 +220,7 @@ rotation = -0.229218
 scale = Vector2( 0.639355, 0.639355 )
 frames = SubResource( 1 )
 animation = "anim"
-frame = 2
+frame = 1
 playing = true
 
 [node name="fab4" type="AnimatedSprite" parent="Earth"]
@@ -230,7 +230,6 @@ rotation = -0.487051
 scale = Vector2( 0.731192, 0.731192 )
 frames = SubResource( 1 )
 animation = "anim"
-frame = 1
 playing = true
 
 [node name="fab3" type="AnimatedSprite" parent="Earth"]
@@ -240,7 +239,6 @@ rotation = 0.0925365
 scale = Vector2( 0.608653, 0.608653 )
 frames = SubResource( 1 )
 animation = "anim"
-frame = 1
 playing = true
 
 [node name="evre14" type="Sprite" parent="Earth"]

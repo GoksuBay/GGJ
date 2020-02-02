@@ -71,12 +71,12 @@ func temp_event(numofPeople):
 		temperature = 52-(plantedSeeds/30 - rubbish/5)
 		if temperature < 22:
 			temperature = 21
-	if yuzde < 30:
+	if yuzde < 40:
 		temperature = 63-(plantedSeeds/30 - rubbish/5)
 		if temperature < 22:
 			temperature = 21
-	if yuzde < 20:
-		temperature = 68-(plantedSeeds/30 - rubbish/5)
+	if yuzde < 30:
+		temperature = 70-(plantedSeeds/30 - rubbish/5)
 		if temperature < 22:
 			temperature = 21
 	if yuzde < 10:

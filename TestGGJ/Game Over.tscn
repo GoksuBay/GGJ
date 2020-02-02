@@ -56,31 +56,31 @@ __meta__ = {
 }
 
 [node name="Restart" type="Button" parent="Panel"]
-margin_left = 171.0
-margin_top = 131.0
-margin_right = 401.0
-margin_bottom = 198.0
+margin_left = 170.0
+margin_top = 305.0
+margin_right = 386.0
+margin_bottom = 365.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Sprite" type="Sprite" parent="Panel/Restart"]
-position = Vector2( -1.92432, -2.16635 )
+position = Vector2( -9.92419, -3.16626 )
 scale = Vector2( 0.440732, 0.431403 )
 texture = ExtResource( 4 )
 centered = false
 
 [node name="Quit" type="Button" parent="Panel"]
-margin_left = 211.0
-margin_top = 234.0
-margin_right = 327.0
-margin_bottom = 281.0
+margin_left = 234.0
+margin_top = 393.0
+margin_right = 330.0
+margin_bottom = 429.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Sprite" type="Sprite" parent="Panel/Quit"]
-position = Vector2( -2, 0 )
+position = Vector2( -13, -9.99988 )
 scale = Vector2( 0.292963, 0.292963 )
 texture = ExtResource( 3 )
 centered = false
